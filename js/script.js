@@ -34,8 +34,20 @@ btnSubmit.addEventListener('click', function (){
       roll.addEventListener('click', function() {
         const min= 1;
         const max= 6;
-        const random = Math.floor(Math.random()*(max - min +1))+ min;
-        console.log(random);  
+        const randomUser = Math.floor(Math.random()*(max - min +1))+ min;
+        const randomPc = Math.floor(Math.random()*(max - min +1))+ min;
+        console.log(randomUser, randomPc); 
+
+        const risultato = document.getElementById('winner');
+        if (randomUser === randomPc){
+          risultato.innerHTML= `Il risultato del tuo dado è stato ${randomUser} Il risultato del pc è stato ${randomPc}. Avete quindi pareggiato`
+
+        } else if (randomUser > randomPc){
+          risultato.innerHTML= `Il risultato del tuo dado è stato ${randomUser} Il risultato del pc è stato ${randomPc}. HAI VINTO :D`
+
+        } else if (randomUser < randomPc){
+          risultato.innerHTML= `Il risultato del tuo dado è stato ${randomUser} Il risultato del pc è stato ${randomPc}. Hai perso :(`
+        } 
       })
 
     } else {
