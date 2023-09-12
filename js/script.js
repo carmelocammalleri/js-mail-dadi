@@ -23,12 +23,20 @@ btnSubmit.addEventListener('click', function (){
     }
     
     let dice = document.getElementById('game-dice');
-    const roll = document.getElementById('tira');
+    const roll = document.getElementById('shoot');
 
     // GAME DICE
     if (samEmail ===true){
       dice.innerHTML = `Benvenuto nel gioco, tira il tuo dado`;
       roll.classList.remove('d-none')
+
+      // TIRA IL DADO
+      roll.addEventListener('click', function() {
+        const min= 1;
+        const max= 6;
+        const random = Math.floor(Math.random()*(max - min +1))+ min;
+        console.log(random);  
+      })
 
     } else {
       dice.innerHTML =`Inserire email corretta`;
@@ -38,7 +46,7 @@ btnSubmit.addEventListener('click', function (){
   
 })
 
-let 
+
 const min= 1;
 const max= 6;
 const random = Math.floor(Math.random()*(max - min +1))+ min;
