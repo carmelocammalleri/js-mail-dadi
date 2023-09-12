@@ -21,9 +21,12 @@ btnSubmit.addEventListener('click', function (){
     if (valueEmail === emailControl){
       samEmail = true
     }
+    
     let dice = document.getElementById('game-dice')
     if (samEmail ===true){
-      dice.innerHTML =`Benvenuto nel gioco, tira il tuo dado`;
+      dice.innerHTML = `Benvenuto nel gioco, tira il tuo dado`;  
+      const roll = document.getElementById ('shoot')
+      roll.classList.remove('d-none');
     } else {
       dice.innerHTML =`Inserire email corretta`;
     }
